@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useAuth } from '../authenticator/AuthContext';
 
 const API_URL = 'http://localhost:3001/users';
 
@@ -7,7 +8,7 @@ export default function LoginAndRegister() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
-
+  const {login, logout} = useAuth();
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function LoginAndRegister() {
       setCurrentUser(users[0]);
       localStorage.setItem('user', JSON.stringify(users[0]));
       setMessage(`Welcome, ${users[0].username}`);
-
+      login();
     } else {
       setMessage('Invalid username or password');
     }
@@ -44,13 +45,12 @@ export default function LoginAndRegister() {
       setMessage('Registration successful!');
       setView('login');
     }
-  };
-
+  }
   const handleLogout = () => {
     setCurrentUser(null);
     localStorage.removeItem('user');
     setMessage('Logged out successfully');
-
+    logout();
   };
 
   return (

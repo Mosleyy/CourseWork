@@ -7,9 +7,11 @@ import Navbar from './Navbar'
 import MainPage from './pages/MainPage'
 import About from './pages/About'
 import LoginAndRegister from './pages/LoginAndRegister';
+import { AuthProvider } from './authenticator/AuthContext';
 
 function Navigator() {
   return (
+    <AuthProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPage />} />
@@ -18,6 +20,7 @@ function Navigator() {
           <Route path="/Login" element={<LoginAndRegister/>}/>
         </Routes>
       </BrowserRouter>
+    </AuthProvider>
   );
 }
 
