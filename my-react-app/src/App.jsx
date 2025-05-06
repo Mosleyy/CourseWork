@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from 'rea
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './Styles.css'
-import Navbar from './Navbar'
+import Navbar from './assets/Navbar'
 import MainPage from './pages/MainPage'
 import About from './pages/About'
 import LoginAndRegister from './pages/LoginAndRegister';
