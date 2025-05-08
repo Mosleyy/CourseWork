@@ -7,7 +7,7 @@ export function UsersList() {
 const [usersData, setUsersData] = useState(userData.users);
   return (
     <div>
-      <h2>Users List</h2>
+      <h2>List of users: </h2>
       <ul>
         {usersData && usersData.map(({username, id}) => (
           <li key={id}>

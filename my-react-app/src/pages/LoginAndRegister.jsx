@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useAuth } from '../authenticator/AuthContext';
+import '../CSS/LoginAndRegister.css';
 
 const API_URL = 'http://localhost:3001/users';
 
@@ -54,26 +55,26 @@ export default function LoginAndRegister() {
   };
 
   return (
-    <div>
+    <div className="auth-wrapper">
       {currentUser ? (
-        <div>
+        <div className="auth-box">
           <h2>Welcome, {currentUser.username}!</h2>
           <button onClick={handleLogout}>Log out</button>
         </div>
       ) : (
-        <div>
+        <div className="auth-box">
           <h2>{view === 'login' ? 'Login' : 'Register'}</h2>
           <input
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-          /><br />
+          />
           <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          /><br />
+          />
           <button onClick={view === 'login' ? handleLogin : handleRegister}>
             {view === 'login' ? 'Log In' : 'Register'}
           </button>

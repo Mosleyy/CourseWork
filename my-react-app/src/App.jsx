@@ -1,11 +1,11 @@
 import { useState} from 'react'
 import { BrowserRouter as Router, Routes, Route, Link, BrowserRouter } from 'react-router-dom';
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './Styles.css'
+import './CSS/Styles.css'
 import Navbar from './assets/Navbar'
 import MainPage from './pages/MainPage'
-import About from './pages/About'
+import Sofia from './pages/Sofia'
+import Plovdiv from './pages/Plovdiv'
+import Varna from './pages/Varna'
 import LoginAndRegister from './pages/LoginAndRegister';
 import { AuthProvider } from './authenticator/AuthContext';
 
@@ -16,7 +16,9 @@ function Navigator() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/MainPage" element={<MainPage />} />
-          <Route path="/About" element={<About />} />
+          <Route path="/Sofia" element={<Sofia />} />
+          <Route path="/Plovdiv" element={<Plovdiv />} />
+          <Route path="/Varna" element={<Varna />} />
           <Route path="/Login" element={<LoginAndRegister/>}/>
         </Routes>
       </BrowserRouter>

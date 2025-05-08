@@ -1,12 +1,18 @@
 export default function Navbar(){
     return <nav className="nav">
-        <a href="/" className="site-title">My Blog</a>
+        <a href="/" className="site-title">Tvavel Bulgaria</a>
         <ul>
             <li>
                 <a href="/MainPage">Home</a>
             </li>
             <li>
-                <a href="/About">About</a>
+                <a href="/Sofia">Sofia</a>
+            </li>
+            <li>
+                <a href="/Plovdiv">Plovdiv</a>
+            </li>
+            <li>
+                <a href="/Varna">Varna</a>
             </li>
             <li>
                 <a href="/Login">Login</a>
