@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
+import "../CSS/CityStyle.css";
 import userData from '../databases/users.json';
-
-const API_URL = 'http://localhost:3001/users';
 
 export function UsersList() {
 const [usersData, setUsersData] = useState(userData.users);
   return (
-    <div>
-      <h2>List of users: </h2>
-      <ul>
-        {usersData && usersData.map(({username, id}) => (
-          <li key={id}>
-            <h3>{username}</h3>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul>
+      {userData && usersData.map(({username}) => (
+      <div className='city-container'>
+        <div className="city-section">
+          <img src="/src/IMGs/user.jpg" alt="First" className="user-image" />
+          <div className="city-text">
+            <h2>{username}</h2>
+            <p>Lorem Ipsun</p>
+          </div>
+        </div>
+      </div>))}
+    </ul>
   );
 }
